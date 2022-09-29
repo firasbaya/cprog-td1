@@ -21,35 +21,50 @@ En terme de *commits*, quelle différence constatez-vous entre cocher une (ou pl
     *Pour la suite, ne cochez aucune de ces cases*.
 1. Localement, configurez `git` avec votre nom (`user.name`) et votre email (`user.email`) (cf. [Personnalisation de Git](https://git-scm.com/book/fr/v2/Personnalisation-de-Git-Configuration-de-Git));
     ```bash
-    # Répondre ici
+    # $ git config --global user.name "firasbaya"
+    $ git config --global user.email firasbaya@hotmail.com
+
     ```
 1. Initialisez le dépôt `git` local pour le projet (cf. [Démarrer un dépôt Git](https://git-scm.com/book/fr/v2/Les-bases-de-Git-D%C3%A9marrer-un-d%C3%A9p%C3%B4t-Git));
     ```bash
     # Répondre ici
+    $ git init
+    $ git add *.c
+    $ git add LICENSE
+    $ git commit -m 'initial project version'
     ```
 1. Dans votre IDE, créez la classe `Fraction` (vide pour le moment) et la classe `Main` (avec un simple affichage) dans le projet (cf. [Méthode `main`](https://docs.oracle.com/javase/specs/jls/se19/html/jls-12.html#jls-12.1.4));
 Vérifiez que le projet compile et s'exécute dans l'IDE;
 Validez les changements (cf. [Enregistrer des modifications dans le dépôt](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Enregistrer-des-modifications-dans-le-d%C3%A9p%C3%B4t));
     ```bash
     # Commandes pour valider les changements
+    $ git commit
     ```
 1. Ajoutez la méthode `toString` à la classe `Fraction` (cf. [`Object.toString`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html#toString())) qui retournera la chaîne `"Je suis une fraction."` et modifiez la classe `Main` en conséquence;
 Validez les changements;
     ```Java
     // Code pour tester toString
+    Classe Fraction:
+    	public String toString() {
+		return "je suis une fraction";
+	}
+    Main:
+    Fraction f =new Fraction();
+	f.toString();
+	
     ```
 1. Publiez vos modifications sur le dépôt distant (cf. [Travailler avec des dépôts distants](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Travailler-avec-des-d%C3%A9p%C3%B4ts-distants));
 Vous utiliserez le protocole `https` pour cela;
 Vérifiez avec le navigateur;
     ```bash
-    # Commandes pour publier les modifications
+    # git remote add firastd1 https://github.com/firasbaya/mon-premier-td
     ```
 1. Sur la forge, ajoutez un fichier de documentation `README.md`.
 Quelle syntaxe est utilisée pour ce fichier ?
-    > Répondre ici
+    > git add README.md && git commit -m "added readme" README.md.
 1. Récupérez localement les modifications effectuées sur la forge.
     ```bash
-    # Répondre ici
+    # git pull master origin 
     ```
 1. Ajoutez les répertoires et fichiers issus de la compilation aux fichiers ignorés par `git` (cf. [`.gitignore` pour Java](https://github.com/github/gitignore/blob/main/Java.gitignore));
     ```bash
