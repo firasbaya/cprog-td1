@@ -63,7 +63,7 @@ Quelle syntaxe est utilisée pour ce fichier ?
     > git add README.md && git commit -m "added readme" README.md.
 1. Récupérez localement les modifications effectuées sur la forge.
     ```bash
-    # git pull master origin 
+    # git pull 
     ```
 1. Ajoutez les répertoires et fichiers issus de la compilation aux fichiers ignorés par `git` (cf. [`.gitignore` pour Java](https://github.com/github/gitignore/blob/main/Java.gitignore));
     ```bash
