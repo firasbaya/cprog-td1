@@ -91,7 +91,8 @@ Vous respecterez les consignes ci-dessous :
 
 1. Ajoutez les attributs représentants le numérateur et le dénominateur (nombres entiers).
     ```Java
-    // Déclaration des attributs
+   public int a;
+   public int b;
     ```
 1. Ajoutez les constructeurs (cf. [Constructor Declarations](https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8)) suivants :
     * initialisation avec un numérateur et un dénominateur,
@@ -102,11 +103,19 @@ Vous respecterez les consignes ci-dessous :
     ```
 1. Ajoutez les fractions constantes ZERO (0, 1) et UN (1, 1) (cf. [Constants in Java](https://www.baeldung.com/java-constants-good-practices)),
     ```Java
-    // Déclaration des constantes
+  	 public static final Fraction zero = new Fraction(1,1);
+	public static final Fraction un = new Fraction(0,1);
     ```
 1. Ajoutez une méthode de consultation du numérateur et du dénominateur (par convention, en Java, une méthode retournant la valeur de l'attribut `anAttribute` est nommée `getAnAttribute`),
     ```Java
-    // Définition des getters
+    	public int getNumérateur() {
+		return numérateur;
+	}
+		public int getDéumérateur() {
+		return dénumérateur;
+	}
+
+
     ```
 1. Ajoutez une méthode de consultation de la valeur sous la forme d'un nombre en virgule flottante (méthode `doubleValue()`) (cf. [`java.lang.Number`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Number.html)),
    ```Java
@@ -139,46 +148,48 @@ Vous pouvez répondre en utilisant le shell de votre choix (*bash*, *Powershell*
 Pour répondre à ces questions, vous devez effectuer les recherches documentaires adéquates (livre, web, …).
 
 1. Quel OS et quel shell de commande utilisez-vous ?
-    > Répondre ici
+    > Windows,git bash
 1. Quelle commande permet d'obtenir de l'aide ?
 Donnez un exemple.
     ```bash
-    # Répondre ici
+   git help
     ```
 1. Donnez la ou les commandes shell permettant de
     1. afficher les fichiers d'un répertoire triés par taille (taille affichée lisiblement)
         ```bash
-        # Répondre ici
+        ls -lsha
         ```
     1. compter le nombre de ligne d'un fichier
         ```bash
-        # Répondre ici
+      	wc -l fichier
         ```
     1. afficher les lignes du fichier `Main.java` contenant la chaîne `uneVariable`
         ```bash
-        # Répondre ici
+        #grep "uneVariable" Main.java
         ```
     1. afficher récursivement les fichiers `.java` contenant la chaîne `uneVariable`
         ```bash
-        # Répondre ici
+       grep -r "uneVariable" Main.java
         ```
     1. trouver les fichiers (pas les répertoires) nommés `README.md` dans une arborescence de répertoires
         ```bash
-        # Répondre ici
+        find / -name README.md
         ```
     1. afficher les différences entre deux fichiers textes
         ```bash
-        # Répondre ici
+       diff file1 file2
+
         ```
 1. Expliquez en une ou deux phrases le rôle de ces commandes et dans quel contexte elles peuvent être utiles pour un développeur.
     * `ssh`
-        > Répondre ici
+        >Fournit une connexion cryptée sécurisée entre deux hôtes sur un réseau non sécurisé
     * `screen`/`tmux`
-        > Répondre ici
+        > tmux:est un multiplexeur de terminaux, outil permettant d'exploiter plusieurs terminaux au sein d'un 	         seul et même affichage
+        > screen:permettant d'ouvrir plusieurs terminaux dans une même console, de passer de l'un à l'autre et 		de les récupérer plus tard.
     * `curl`/[HTTPie](https://httpie.org/)
-        > Répondre ici
+        > Permet de tester des API.
     * [jq](https://stedolan.github.io/jq/)
-        > Répondre ici
+        > jq peut modifier le format de données que vous avez dans celui que vous voulez avec très peu d'effort
 
 ### Découverte de votre *IDE*
 Dans cet exercice, vous expliquerez en quelques phrases comment vous réalisez les actions ci-dessous dans votre IDE.
@@ -186,28 +197,33 @@ Vous pouvez choisir l'IDE/éditeur de texte de votre choix.
 Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la documentations de l'IDE ([IntelliJ IDEA](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#developer-tools), [Visual Studio Code](https://code.visualstudio.com/docs), [Eclipse](https://help.eclipse.org/2020-09/index.jsp), …).
 
 1. Quels IDE ou éditeurs de texte utilisez-vous pour le développement Java ?
-    > Répondre ici
+    > Eclipse
 
     Pour la suite, ne considérez que l'un de vos choix.
 1. Comment vérifier/définir que l'encodage utilisé est *UTF-8* ?
-    > Répondre ici
+    > Window -> Preferences -> General -> Workspace : Text file encoding
 1. Comment choisir le JDK à utiliser dans un projet ?
-    > Répondre ici
+    > Java > Compiler", et dans "Compiler compliance level" selectionnez le JDK voulu
 1. Comment préciser la version Java des sources dans un projet ?
     > Répondre ici
 1. Comment ajouter une bibliothèque externe dans un projet ?
-    > Répondre ici
+    >Sélectionnez votre projet dans l'explorateur de paquetages (Package Explorer).
+	Sélectionnez l'entrée Properties du menu Project.
+	Dans la boîte de dialogue qui s'ouvre, sélectionnez l'entrée Java Build Path.
+	Activez l'onglet Libraries et cliquez sur Add External JARs…. Dans la boîte de dialogue qui s'ouvre, 	     choisissez le fichier JAR que vous désirez utiliser, puis cliquez sur Ok.
 1. Comment reformater un fichier source Java ?
     > Répondre ici
 1. Comment trouver la déclaration d'une variable ou méthode ?
     > Répondre ici
 1. Comment insérer un bloc de code prédéfini (*snippet*) ?
-    > Répondre ici
+    > Ctrl + Shift + C ou Ctrl + Shift + / pour mettre en commentaire.
 1. Comment renommer une classe dans l'ensemble du projet ?
-    > Répondre ici
+    > click droit sur la classe
+    > refractor
+    > rename
 1. Comment exécuter le programme en lui passant un paramètre en ligne de commande ?
-    > Répondre ici
+    > Configurations… du menu Run. La fenêtre qui s'ouvre alors liste sur la gauche la totalité des configurations d'exécution existantes, tandis que les paramètres de la configuration sélectionnée apparaissent à droite de cette liste. Ces paramètres sont répartis sur plusieurs onglets, le seul qui nous intéressant ici étant celui nommé Arguments.
 1. Comment déboguer le programme en visualisant le contenu d'une ou plusieurs variables ?
-    > Répondre ici
+    > Run,debug ou f11
 1. Quels paramètres ou fonctionnalités vous semblent particulièrement importants/utiles pour le développement Java ?
-    > Répondre ici
+    > La plus part de ces fonctionnalités sont importantes et utiles, ils nous facilitent les taches.
