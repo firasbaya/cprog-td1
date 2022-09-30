@@ -67,7 +67,8 @@ Quelle syntaxe est utilisée pour ce fichier ?
     ```
 1. Ajoutez les répertoires et fichiers issus de la compilation aux fichiers ignorés par `git` (cf. [`.gitignore` pour Java](https://github.com/github/gitignore/blob/main/Java.gitignore));
     ```bash
-    # Copier ici le contenu de `.gitignore`
+     /.metadata/
+
     ```
 1. Retirez les fichiers de configuration de l'IDE du projet;
     ```bash
@@ -78,7 +79,7 @@ Quelle syntaxe est utilisée pour ce fichier ?
     # Copier ici les modifications de `.gitignore`
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)).
-    > Expliquez la procédure de façon synthétique
+    1-On vérifie s'il ya déjà une clé ssh, aprés on génere une nouvelle clé ssh et on l'ajoute à notre machine ssh agent,aprés on execute la commande :clip < ~/.ssh/id_ed25519.pub dans notre cli et on ajoute la clé dans la partie access,SSH Keys dans settings 
 
 ## Partie II (à faire durant le TD) : compléter la classe `Fraction`
 Dans cet partie, vous compléterez les classes `Fraction` et `Main`.
